@@ -5,6 +5,6 @@ export const GET = handleAuth(({
         authorizationParams: {
             prompt: "login",
         },
-        returnTo: '/'
+        returnTo: '/account'
     }),
 }));
