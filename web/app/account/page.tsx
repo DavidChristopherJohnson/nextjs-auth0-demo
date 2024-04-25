@@ -1,6 +1,6 @@
-import { Claims, getSession } from "@auth0/nextjs-auth0";
+import { Claims, getSession, withPageAuthRequired } from "@auth0/nextjs-auth0";
 
-export default async function AccountPage(){
+async function AccountPage(){
   const user = (await getSession())?.user;
 
   
@@ -16,3 +16,5 @@ export default async function AccountPage(){
       <EmailLabel user={user} />
     </main>
 }
+
+export default withPageAuthRequired(AccountPage);
